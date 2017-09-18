@@ -1,0 +1,55 @@
+﻿@model IEnumerable<GitHubTrendings.Models.TrendingSets>
+
+@{
+    ViewBag.Title = "GitHub";
+}
+
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Repositorio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdOwner)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeOwner)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stars)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Repositorio).ToString()
+        </td>
+        <td>
+            @if ( @item.Descricao.Length > 40)
+                { @Html.DisplayFor(modelItem => item.Descricao).ToString().Substring(0, 40)}
+            else
+            { @Html.DisplayFor(modelItem => item.Descricao).ToString()}}
+        </td>
+        <td>
+            @Html.ActionLink(@Html.DisplayFor(modelItem => item.IdOwner).ToString(), "Details", new { id = item.IdOwner})
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeOwner)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Stars)
+        </td>
+        <td>
+            @Html.ActionLink("Salvar", "Edit", new { id = item.IdOwner })
+        </td>
+    </tr>
+}
+
+</table>

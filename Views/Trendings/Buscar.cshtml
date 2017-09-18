@@ -1,0 +1,53 @@
+﻿@model IEnumerable<GitHubTrendings.Models.TrendingSets>
+
+@{
+    ViewBag.Title = "GitHub";
+}
+
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Repositorio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdOwner)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeOwner)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stars)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href="@item.Repositorio">@Html.DisplayFor(modelItem => item.Repositorio).ToString()</a>
+            </td>
+            <td>
+                @if (@item.Descricao.Length > 40)
+                {@Html.DisplayFor(modelItem => item.Descricao).ToString().Substring(0, 40)}
+                else
+                {@Html.DisplayFor(modelItem => item.Descricao).ToString()})
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdOwner)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeOwner)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stars)
+            </td>
+        </tr>
+    }
+
+</table>

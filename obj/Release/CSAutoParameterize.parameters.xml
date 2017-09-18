@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="TrendHub-Web.config Connection String" description="TrendHub Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:nz3otqff22.database.windows.net,1433;Initial Catalog=TrendHub;Persist Security Info=False;User ID=carekidds;Password=C4r3k1dd5;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=False;Connection Timeout=30;MultipleActiveResultSets=False;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Ricardo\\Documents\\Visual\ Studio\ 2017\\Projects\\GitHubTrendings\\GitHubTrendings\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TrendHub']/@connectionString" />
+  </parameter>
+</parameters>
